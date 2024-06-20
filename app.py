@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def get_product_by_id(product_id):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/customers')
 def customers():
@@ -72,3 +72,4 @@ def get_product():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
