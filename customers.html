@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Customers</h1>
+    </header>
+   
+    <main>
+        <br>
+        <br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='customer_1.jpg') }}" class="small-image">
+        </div>
+        <div class="below-corners">
+            <a class="button below-left" href="{{ url_for('home') }}">Home</a>
+            <a class="button below-right" href="{{ url_for('add_customer') }}">Add Customer</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Problem B Exam</p>
+    </footer>
+</body>
+</html>

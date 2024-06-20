@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header><h1>Get Products</h1></header>
+    <nav>
+        <a href="{{ url_for('home') }}"><h1>Return to Home</h1></a>
+    </nav>
+    
+    <form action="{{ url_for('get_product') }}" method="post">
+        <label for="product_id">Product ID:</label>
+        <input type="text" id="product_id" name="product_id"><br>
+        <button type="submit">Get Product</button>
+    </form>
+
+    {% if product %}
+        <h2>Product Information</h2>
+        <img src="{{ url_for('static', filename=image_filename) }}" alt="{{ product[1] }}" style="max-width: 300px;">
+        <table border="1">
+            <tr>
+                <th>Product Name</th>
+                <td>{{ product[1] }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ product[2] }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ product[3] }}</td>
+            </tr>
+            <tr>
+                <th>Inventory</th>
+                <td>{{ product[4] }}</td>
+            </tr>
+            <tr>
+                <th>Vendor</th>
+                <td>{{ product[5] }}</td>
+            </tr>
+        </table>
+    {% endif %}
+    <footer>
+        <p>&copy; Problem B Exam</p>
+    </footer>
+</body>
+</html>

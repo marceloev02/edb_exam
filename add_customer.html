@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Customer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header><h1>Add Customer</h1></header>
+    <nav>
+        <a href="{{ url_for('home') }}"><h1>Return to Home</h1></a>
+    </nav>
+    
+    <form action="{{ url_for('add_customer') }}" method="post">
+        <label for="name">First Name:</label>
+        <input type="text" id="first_name" name="first_name"><br>
+        
+        <label for="name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name"><br>
+        <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+        <label for="dob">Date of Birth: (yyyy-mm-dd)</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        <button type="submit">Add Customer</button>
+    </form>
+    {% if last_customer %}
+    <h2>Customer Succesfully Added</h2>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+        </tr>
+        <tr>
+            <td>{{ last_customer[0] }}</td>
+            <td>{{ last_customer[1] }}</td>
+            <td>{{ last_customer[2] }}</td>
+            <td>{{ last_customer[3] }}</td>
+        </tr>
+    </table>
+    {% endif %}
+    <footer>
+        <p>&copy; Problem B Exam</p>
+    </footer>
+</body>
+</html>

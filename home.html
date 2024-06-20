@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Home Page</h1>
+    </header>
+   
+    <main>
+        <br>
+        <br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='home_pic.jpg') }}" class="small-image">
+        </div>
+        <div class="below-corners">
+            <a class="button below-left" href="{{ url_for('customers') }}">Customer</a>
+            <a class="button below-right" href="{{ url_for('products') }}">Products</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Problem B Exam</p>
+    </footer>
+</body>
+</html>
+
