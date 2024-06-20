@@ -28,7 +28,7 @@ def get_product_by_id(product_id):
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route('/customers')
 def customers():
